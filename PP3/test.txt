@@ -1,0 +1,65 @@
+/*
+class Army{
+
+private:
+    std::string color;
+    Vertex position;
+    std::vector<std::string> enemies;
+    uint moves;
+    uint pathWeight;
+
+public:
+    Army(const std::string& c, Vertex pos, std::vector<std::string> en) : color(c), position(pos), enemies(en), moves(0), pathWeight(0){}
+
+    std::string getColor(){
+        return color;
+    }
+
+    Vertex getPosition(){
+        return position;
+    }
+   
+    const std::vector<std::string> getEnemies(){
+        return enemies;
+    }
+
+    void setWinner(int m, int w){
+        moves = m;
+        pathWeight = w;
+    }
+
+    uint getMoves(){
+        return moves;
+    }
+
+    Weight getpathWeight(){
+        return pathWeight;
+    }
+};
+
+class Battle{
+
+private:
+    Graph& g;
+    std::vector<Army> armies;
+    Vertex castle;
+    std::vector<Vertex> tormentas;
+
+public:
+    Battle(Graph& graph, const std::vector<Army>& a, Vertex c, std::vector<Vertex> t) : g(graph), armies(a), castle(c), tormentas(t){}
+
+    void run(){
+        bool finished = false;
+
+    }
+
+};
+*/
+    Vertex chessToVertex(const std::string& pos, uint board_dimension) {
+        char colChar = std::tolower(pos[0]);
+        int col = colChar - 'a';
+        
+        uint row = std::stoi(pos.substr(1)) - 1;
+
+        return row * board_dimension + col;
+    }
